@@ -218,6 +218,10 @@
     }
   }
 
+  function onKeyDown(...args) {
+    emit('keydown', [...args]);
+  }
+
   onMount(() => {
     f7ready(() => {
       if (type === 'range' || type === 'toggle') return;
@@ -658,6 +662,7 @@
     on:blur={onBlur}
     on:input={onInput}
     on:change={onChange}
+    on:keydown={onKeyDown}
     value={type === 'datepicker' || type === 'colorpicker' || type === 'file' ? '' : inputValue}
     {...restProps($$restProps)}
   />
