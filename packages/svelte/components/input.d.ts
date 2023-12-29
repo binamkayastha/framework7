@@ -75,7 +75,7 @@ interface InputProps {
 
 declare class Input extends SvelteComponent<
   InputProps & Omit<HTMLAttributes<HTMLElementTagNameMap['div']>, keyof InputProps>,
-  { textareaResize: CustomEvent<void>; inputNotEmpty: CustomEvent<void>; inputEmpty: CustomEvent<void>; inputClear: CustomEvent<void>; input: CustomEvent<void>; focus: CustomEvent<void>; blur: CustomEvent<void>; change: CustomEvent<void>; textEditorChange: CustomEvent<void>; calendarChange: CustomEvent<void>; colorpickerChange: CustomEvent<void>; },
+  { textareaResize: CustomEvent<void>; inputNotEmpty: CustomEvent<void>; inputEmpty: CustomEvent<void>; inputClear: CustomEvent<void>; input: CustomEvent<void>; focus: CustomEvent<void>; blur: CustomEvent<void>; change: CustomEvent<void>; textEditorChange: CustomEvent<void>; keydown: CustomEvent<void>; calendarChange: CustomEvent<void>; colorpickerChange: CustomEvent<void>; },
   {  'default' : {};  'error-message' : {};  'info' : {}; }
 > {}
 

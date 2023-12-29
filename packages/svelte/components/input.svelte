@@ -218,6 +218,10 @@
     }
   }
 
+  function onKeyDown(event) {
+    emit('keydown', [event]);
+  }
+
   onMount(() => {
     f7ready(() => {
       if (type === 'range' || type === 'toggle') return;
@@ -359,6 +363,7 @@
         on:blur={onBlur}
         on:input={onInput}
         on:change={onChange}
+        on:keydown={onKeyDown}
         value={inputValue}
       >
         <slot />
@@ -404,6 +409,7 @@
         on:blur={onBlur}
         on:input={onInput}
         on:change={onChange}
+        on:keydown={onKeyDown}
         value={inputValue}
       />
     {:else if type === 'toggle'}
@@ -473,6 +479,7 @@
         on:blur={onBlur}
         on:input={onInput}
         on:change={onChange}
+        on:keydown={onKeyDown}
         value={type === 'datepicker' || type === 'colorpicker' || type === 'file' ? '' : inputValue}
       />
     {/if}
@@ -531,6 +538,7 @@
     on:blur={onBlur}
     on:input={onInput}
     on:change={onChange}
+    on:keydown={onKeyDown}
     value={inputValue}
     {...restProps($$restProps)}
   >
@@ -577,6 +585,7 @@
     on:blur={onBlur}
     on:input={onInput}
     on:change={onChange}
+    on:keydown={onKeyDown}
     value={inputValue}
     {...restProps($$restProps)}
   />
@@ -589,6 +598,7 @@
     {disabled}
     id={inputId}
     on:change={onChange}
+    on:keydown={onKeyDown}
     {...restProps($$restProps)}
   />
 {:else if type === 'range'}
@@ -658,6 +668,7 @@
     on:blur={onBlur}
     on:input={onInput}
     on:change={onChange}
+    on:keydown={onKeyDown}
     value={type === 'datepicker' || type === 'colorpicker' || type === 'file' ? '' : inputValue}
     {...restProps($$restProps)}
   />
