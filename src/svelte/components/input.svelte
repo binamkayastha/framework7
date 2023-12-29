@@ -219,6 +219,8 @@
   }
 
   function onKeyDown(event) {
+    console.log('Key down with event in framework: ');
+    console.log(event);
     emit('keydown', [event]);
   }
 
